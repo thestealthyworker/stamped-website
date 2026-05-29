@@ -116,13 +116,13 @@ abbr{text-decoration:underline dotted;cursor:help}
   background:var(--navy);
   padding:clamp(5rem,10vw,9rem) clamp(1.25rem,5vw,3rem) clamp(4rem,7vw,7rem);
 }
-/* Subtle diagonal grain */
+/* Official Record hero background — ledger rules, stamp frames, seal geometry */
 .hero::before{
   content:'';position:absolute;inset:0;pointer-events:none;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E"),
+    url("assets/hero-bg.png") center center / cover no-repeat,
     linear-gradient(150deg,#0F1F3D 0%,#0A1628 100%);
-  opacity:1
+  opacity:.55
 }
 
 /* Ghost stamp watermark — bottom-right */
