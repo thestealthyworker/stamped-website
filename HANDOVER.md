@@ -104,9 +104,9 @@ assets/
 ---
 
 ## What's next (open items)
-- [ ] Replace 3 placeholders (Tally, WhatsApp, LinkedIn)
-- [ ] Register `stamped.sg` domain → add CNAME + DNS
-- [ ] Fill out Tally form for pilot sign-ups
-- [ ] SEO/AEO: submit sitemap to Google Search Console once on custom domain
+- [x] Domain registered as `stampedsg.com` (not `stamped.sg` as originally planned); CNAME + `vercel.json` (framework: null, static hosting) added and confirmed deployed successfully as of 2026-08-12
+- [x] WhatsApp CTA is live (`wa.me/6581184365`), no longer a placeholder
+- [ ] Verify Tally form / LinkedIn slug placeholders are still outstanding
+- [ ] SEO/AEO: submit sitemap to Google Search Console now that the custom domain is live
 - [ ] Consider adding a `sitemap.xml` and `robots.txt`
 - [ ] Outreach / AEO strategy (not started — was planned as next phase)
