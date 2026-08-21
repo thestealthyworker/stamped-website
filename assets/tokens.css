@@ -1,0 +1,105 @@
+/* ==========================================================================
+   STAMPED — DESIGN TOKENS
+   Source of truth: Stamped-07-Dashboard-Design.txt §1, §3
+                     Stamped-08-App-Design.txt §2
+                     Stamped-09-Website-Design-Vanta-Brief.md §2 (marketing additions)
+   Drop this file in as-is. Do not hand-edit hex values — change the source
+   spec first, then regenerate this file, so product and marketing never drift.
+   ========================================================================== */
+
+:root {
+  /* ---- Brand ---- */
+  --stamped-green: #00B37E;
+  --stamped-green-dark: #007A54;
+  --stamped-green-light: #E6F7F2;
+  --enterprise-navy: #0F1F3D;
+  --navy-800: #0A1628;
+  --navy-600: #1A3456;
+  --navy-400: #2A5080;
+  --navy-text: #6B87A8;      /* in-product nav labels ONLY — see accessibility note below */
+
+  /* ---- Surfaces ---- */
+  --surface-white: #FFFFFF;
+  --surface-off-white: #F7F8FA;
+  --border-default: #E4E4E7;
+  --border-subtle: #F1F1F3;
+
+  /* ---- Text (app/dashboard scale) ---- */
+  --text-primary: #0A0A0B;
+  --text-secondary: #52525B;
+  --text-tertiary: #A1A1AA;
+  --text-inverse: #FFFFFF;
+
+  /* ---- Status ---- */
+  --success-text: #065F46;
+  --success-bg: #E6F7F2;
+  --warning-text: #92400E;
+  --warning-bg: #FFFBEB;
+  --danger-text: #991B1B;
+  --danger-bg: #FEF2F2;
+  --neutral-text: #374151;
+  --neutral-bg: #F3F4F6;
+
+  /* ---- Typography ---- */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
+
+  /* Product/app type scale (Stamped-07 §3 / Stamped-08 §2) */
+  --type-display: 800 32px/1.2 var(--font-primary);
+  --type-h1: 700 24px/1.3 var(--font-primary);
+  --type-h2: 700 18px/1.35 var(--font-primary);
+  --type-h3: 600 15px/1.4 var(--font-primary);
+  --type-body-lg: 400 15px/1.6 var(--font-primary);
+  --type-body: 400 14px/1.6 var(--font-primary);
+  --type-body-sm: 400 13px/1.5 var(--font-primary);
+  --type-caption: 500 12px/1.4 var(--font-primary);
+  --type-label: 700 11px/1.3 var(--font-primary); /* uppercase, 0.8px tracking */
+
+  /* NEW — marketing site only (Stamped-09 §2). Product type scale tops out
+     at Display 32px, which is correct for in-app data and wrong for a
+     landing headline — these two sizes exist for the marketing site alone. */
+  --type-hero-xl: 800 56px/1.05 var(--font-primary); /* letter-spacing: -1px */
+  --type-hero-sub: 400 19px/1.5 var(--font-primary);
+
+  /* ---- Spacing (4px base grid) ---- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px;
+
+  /* ---- Radius ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;   /* app uses 12px — see --radius-md-app */
+  --radius-md-app: 12px;
+  --radius-lg: 14px;   /* app uses 16px — see --radius-lg-app */
+  --radius-lg-app: 16px;
+  --radius-xl: 18px;   /* app uses 24px top-corners-only for sheets */
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
+  --shadow-brand: 0 4px 16px rgba(0,179,126,0.25);
+
+  /* ---- Grid ---- */
+  --page-max-width: 1440px;
+  --content-max-width: 1200px;
+  --page-padding-desktop: 32px;
+  --page-padding-tablet: 20px;
+
+  /* NEW — marketing site only (Stamped-09 §2) */
+  --device-frame-shadow: var(--shadow-lg);
+  --hero-bg: var(--enterprise-navy);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY NOTE — Stamped-09 §8.2, closes finding #3
+   --navy-text (#6B87A8) on --enterprise-navy (#0F1F3D) measures ~3.1:1 and
+   FAILS WCAG AA (4.5:1) for body-weight text. It is valid only for the
+   in-product nav-label use it already has in Stamped-07. Any NEW body copy
+   this marketing site adds on a navy background must use one of:
+     color: rgba(255,255,255,0.85);   /* ~4.8:1 against #0F1F3D, passes AA */
+     color: var(--stamped-green-light); /* for emphasis text on navy */
+   Do not reach for --navy-text outside the existing in-product contexts.
+   ========================================================================== */

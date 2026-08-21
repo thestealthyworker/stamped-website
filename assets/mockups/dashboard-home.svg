@@ -1,0 +1,174 @@
+<svg width="1200" height="750" viewBox="0 0 1200 750" xmlns="http://www.w3.org/2000/svg" font-family="Inter, -apple-system, sans-serif">
+  <title>Stamped — PM Dashboard, Portfolio Overview (sample data, fictional developments)</title>
+
+  <!-- page bg -->
+  <rect x="0" y="0" width="1200" height="750" fill="#F7F8FA"/>
+
+  <!-- sidebar -->
+  <rect x="0" y="0" width="240" height="750" fill="#0F1F3D"/>
+  <rect x="24" y="24" width="120" height="28" rx="6" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="84" y="43" font-size="13" font-weight="800" letter-spacing="1.2" fill="#FFFFFF" text-anchor="middle">STAMPED</text>
+
+  <rect x="16" y="80" width="208" height="36" rx="8" fill="#0A1628"/>
+  <rect x="16" y="80" width="3" height="36" fill="#00B37E"/>
+  <text x="32" y="103" font-size="14" font-weight="600" fill="#FFFFFF">Dashboard</text>
+
+  <text x="32" y="146" font-size="14" font-weight="500" fill="#6B87A8">Job Records</text>
+  <text x="32" y="182" font-size="14" font-weight="500" fill="#6B87A8">Contractors</text>
+  <text x="32" y="218" font-size="14" font-weight="500" fill="#6B87A8">Invoices</text>
+  <text x="32" y="254" font-size="14" font-weight="500" fill="#6B87A8">Compliance</text>
+
+  <!-- live indicator -->
+  <circle cx="1140" cy="30" r="4" fill="#00B37E"/>
+  <text x="1152" y="34" font-size="10" font-weight="500" fill="#00B37E" text-anchor="end">Live</text>
+
+  <!-- ===== ROW 1 — METRIC CARDS ===== -->
+  <!-- card 1 -->
+  <g>
+    <rect x="272" y="40" width="206" height="90" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="272" y="40" width="206" height="3" fill="#00B37E"/>
+    <text x="292" y="66" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">JOBS THIS MONTH</text>
+    <text x="292" y="98" font-size="28" font-weight="800" fill="#0A0A0B">142</text>
+    <text x="292" y="118" font-size="12" fill="#A1A1AA">+18 vs last week</text>
+  </g>
+  <!-- card 2 -->
+  <g>
+    <rect x="498" y="40" width="206" height="90" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="498" y="40" width="206" height="3" fill="#F59E0B"/>
+    <text x="518" y="66" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">PENDING INVOICES</text>
+    <text x="518" y="98" font-size="28" font-weight="800" fill="#0A0A0B">SGD 8,240</text>
+    <text x="518" y="118" font-size="12" fill="#A1A1AA">12 invoices</text>
+  </g>
+  <!-- card 3 -->
+  <g>
+    <rect x="724" y="40" width="206" height="90" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="724" y="40" width="206" height="3" fill="#EF4444"/>
+    <text x="744" y="66" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">WARRANTIES EXPIRING</text>
+    <text x="744" y="98" font-size="28" font-weight="800" fill="#0A0A0B">3</text>
+    <text x="744" y="118" font-size="12" fill="#A1A1AA">next 30 days</text>
+  </g>
+  <!-- card 4 -->
+  <g>
+    <rect x="950" y="40" width="206" height="90" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="950" y="40" width="206" height="3" fill="#6366F1"/>
+    <text x="970" y="66" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">ACTIVE CONTRACTORS</text>
+    <text x="970" y="98" font-size="28" font-weight="800" fill="#0A0A0B">27</text>
+    <text x="970" y="118" font-size="12" fill="#A1A1AA">+2 this month</text>
+  </g>
+
+  <!-- ===== ROW 2 — PROPERTIES (left) + ALERTS (right) ===== -->
+  <text x="272" y="168" font-size="18" font-weight="700" fill="#0A0A0B">Managed Developments</text>
+  <text x="788" y="168" font-size="13" font-weight="600" fill="#00B37E" text-anchor="end">View all &#8594;</text>
+
+  <!-- property card 1 -->
+  <g>
+    <rect x="272" y="188" width="250" height="112" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="272" y="188" width="4" height="112" fill="#00B37E"/>
+    <text x="292" y="212" font-size="15" font-weight="600" fill="#0A0A0B">Amberhill Court</text>
+    <rect x="440" y="200" width="66" height="18" rx="9" fill="#E6F7F2"/>
+    <text x="473" y="213" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle">ALL CLEAR</text>
+    <text x="292" y="232" font-size="12" fill="#A1A1AA">MCST 4021 &#183; 312 units</text>
+    <text x="292" y="264" font-size="12" fill="#52525B">18 jobs &#183; 2 open invoices</text>
+    <text x="502" y="290" font-size="11" fill="#A1A1AA" text-anchor="end">Last job: 2d ago</text>
+  </g>
+  <!-- property card 2 -->
+  <g>
+    <rect x="538" y="188" width="250" height="112" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="538" y="188" width="4" height="112" fill="#F59E0B"/>
+    <text x="558" y="212" font-size="15" font-weight="600" fill="#0A0A0B">Toa Payoh Heights</text>
+    <rect x="706" y="200" width="66" height="18" rx="9" fill="#FFFBEB"/>
+    <text x="739" y="213" font-size="10" font-weight="700" fill="#92400E" text-anchor="middle">WARNING</text>
+    <text x="558" y="232" font-size="12" fill="#A1A1AA">MCST 3894 &#183; 208 units</text>
+    <text x="558" y="264" font-size="12" fill="#52525B">9 jobs &#183; 1 overdue invoice</text>
+    <text x="768" y="290" font-size="11" fill="#A1A1AA" text-anchor="end">Last job: 5d ago</text>
+  </g>
+  <!-- property card 3 -->
+  <g>
+    <rect x="272" y="314" width="250" height="112" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="272" y="314" width="4" height="112" fill="#00B37E"/>
+    <text x="292" y="338" font-size="15" font-weight="600" fill="#0A0A0B">Bishan Gardens Court</text>
+    <rect x="440" y="326" width="66" height="18" rx="9" fill="#E6F7F2"/>
+    <text x="473" y="339" font-size="10" font-weight="700" fill="#065F46" text-anchor="middle">ALL CLEAR</text>
+    <text x="292" y="358" font-size="12" fill="#A1A1AA">MCST 3312 &#183; 176 units</text>
+    <text x="292" y="390" font-size="12" fill="#52525B">11 jobs &#183; 0 open invoices</text>
+    <text x="502" y="416" font-size="11" fill="#A1A1AA" text-anchor="end">Last job: 1d ago</text>
+  </g>
+  <!-- property card 4 -->
+  <g>
+    <rect x="538" y="314" width="250" height="112" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="538" y="314" width="4" height="112" fill="#EF4444"/>
+    <text x="558" y="338" font-size="15" font-weight="600" fill="#0A0A0B">Yishun Ridge View</text>
+    <rect x="706" y="326" width="66" height="18" rx="9" fill="#FEF2F2"/>
+    <text x="739" y="339" font-size="10" font-weight="700" fill="#991B1B" text-anchor="middle">OVERDUE</text>
+    <text x="558" y="358" font-size="12" fill="#A1A1AA">MCST 2977 &#183; 264 units</text>
+    <text x="558" y="390" font-size="12" fill="#52525B">6 jobs &#183; 3 overdue invoices</text>
+    <text x="768" y="416" font-size="11" fill="#A1A1AA" text-anchor="end">Last job: 11d ago</text>
+  </g>
+
+  <!-- alerts panel -->
+  <text x="812" y="168" font-size="18" font-weight="700" fill="#0A0A0B">Alerts</text>
+  <rect x="852" y="152" width="22" height="18" rx="9" fill="#EF4444"/>
+  <text x="863" y="165" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+
+  <g>
+    <rect x="812" y="188" width="344" height="58" rx="10" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="812" y="188" width="4" height="58" fill="#EF4444"/>
+    <text x="828" y="210" font-size="13" font-weight="600" fill="#0A0A0B">Warranty expiring — Bishan Gardens</text>
+    <text x="828" y="228" font-size="12" fill="#52525B">2 units, expires in 6 days</text>
+  </g>
+  <g>
+    <rect x="812" y="254" width="344" height="58" rx="10" fill="#FFFFFF" stroke="#E4E4E7"/>
+    <rect x="812" y="254" width="4" height="58" fill="#F59E0B"/>
+    <text x="828" y="276" font-size="13" font-weight="600" fill="#0A0A0B">Invoice overdue — Toa Payoh Heights</text>
+    <text x="828" y="294" font-size="12" fill="#52525B">SGD 1,240, 9 days overdue</text>
+  </g>
+
+  <!-- AI weekly insight -->
+  <rect x="812" y="326" width="344" height="100" rx="14" fill="#E6F7F2"/>
+  <text x="828" y="350" font-size="12" font-weight="700" fill="#065F46">&#10024; Weekly Insight</text>
+  <text x="828" y="372" font-size="12" fill="#065F46">Aircon service costs at Yishun Ridge are</text>
+  <text x="828" y="390" font-size="12" fill="#065F46">18% above your portfolio benchmark —</text>
+  <text x="828" y="408" font-size="12" fill="#065F46">worth a rate review with the contractor.</text>
+
+  <!-- ===== ROW 3 — RECENT JOBS TABLE ===== -->
+  <text x="272" y="466" font-size="18" font-weight="700" fill="#0A0A0B">Recent Jobs (7 days)</text>
+  <text x="1156" y="466" font-size="13" font-weight="600" fill="#00B37E" text-anchor="end">See all &#8594;</text>
+
+  <rect x="272" y="484" width="884" height="200" rx="14" fill="#FFFFFF" stroke="#E4E4E7"/>
+  <rect x="272" y="484" width="884" height="34" fill="#F7F8FA"/>
+  <line x1="272" y1="518" x2="1156" y2="518" stroke="#E4E4E7"/>
+  <text x="292" y="506" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">PROPERTY</text>
+  <text x="512" y="506" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">CONTRACTOR</text>
+  <text x="712" y="506" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">JOB TYPE</text>
+  <text x="892" y="506" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">DATE</text>
+  <text x="1012" y="506" font-size="11" font-weight="700" letter-spacing="0.8" fill="#A1A1AA">INVOICE</text>
+
+  <g font-size="13" fill="#0A0A0B">
+    <text x="292" y="542">Amberhill Court</text>
+    <text x="512" y="542" fill="#52525B">Lim Aircon Services</text>
+    <text x="712" y="542" fill="#52525B">Aircon Service</text>
+    <text x="892" y="542" font-family="JetBrains Mono, monospace" font-size="12" fill="#52525B">14 Aug</text>
+    <text x="1012" y="542" font-weight="600">SGD 180</text>
+    <line x1="272" y1="558" x2="1156" y2="558" stroke="#F1F1F3"/>
+
+    <text x="292" y="580">Bishan Gardens Court</text>
+    <text x="512" y="580" fill="#52525B">Tan Plumbing Co.</text>
+    <text x="712" y="580" fill="#52525B">Plumbing Repair</text>
+    <text x="892" y="580" font-family="JetBrains Mono, monospace" font-size="12" fill="#52525B">13 Aug</text>
+    <text x="1012" y="580" font-weight="600">SGD 320</text>
+    <line x1="272" y1="596" x2="1156" y2="596" stroke="#F1F1F3"/>
+
+    <text x="292" y="618">Toa Payoh Heights</text>
+    <text x="512" y="618" fill="#52525B">BrightSpark Electrical</text>
+    <text x="712" y="618" fill="#52525B">Electrical Repair</text>
+    <text x="892" y="618" font-family="JetBrains Mono, monospace" font-size="12" fill="#52525B">12 Aug</text>
+    <text x="1012" y="618" font-weight="600">SGD 240</text>
+    <line x1="272" y1="634" x2="1156" y2="634" stroke="#F1F1F3"/>
+
+    <text x="292" y="656">Yishun Ridge View</text>
+    <text x="512" y="656" fill="#52525B">Ong Waterproofing</text>
+    <text x="712" y="656" fill="#52525B">Waterproofing</text>
+    <text x="892" y="656" font-family="JetBrains Mono, monospace" font-size="12" fill="#52525B">10 Aug</text>
+    <text x="1012" y="656" font-weight="600">SGD 890</text>
+  </g>
+</svg>
