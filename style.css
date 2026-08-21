@@ -27,7 +27,8 @@
   --r-lg:        14px;
   --ease:        cubic-bezier(0.16,1,0.3,1);
   --t:           260ms;
-  --section-v:   clamp(4.5rem,8vw,8rem);
+  --section-v:   clamp(5rem,9vw,9.5rem);
+  --maxw:        1240px;
 }
 
 /* ── RESET ── */
@@ -40,7 +41,7 @@ ul,ol{list-style:none}
 abbr{text-decoration:underline dotted;cursor:help}
 
 /* ── LAYOUT ── */
-.container{width:100%;max-width:1200px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
 .container--narrow{max-width:820px}
 
 /* ── REVEAL ── */
@@ -50,10 +51,10 @@ abbr{text-decoration:underline dotted;cursor:help}
 /* ── SHARED TYPE ── */
 .sec-tag{display:inline-block;font-size:.6875rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.875rem;font-variant-numeric:tabular-nums}
 .sec-tag--green{color:var(--green)}
-.sec-h2{font-size:clamp(1.75rem,1rem+2.5vw,2.875rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:var(--ink);margin-bottom:1rem}
+.sec-h2{font-size:clamp(2rem,1.1rem + 2.9vw,3.375rem);font-weight:800;line-height:1.08;letter-spacing:-.035em;color:var(--ink);margin-bottom:1.125rem}
 .sec-h2--light{color:var(--white)}
-.sec-header{margin-bottom:clamp(2.5rem,4vw,4rem)}
-.sec-sub{font-size:1.0625rem;color:var(--ink-2);line-height:1.72;max-width:56ch}
+.sec-header{margin-bottom:clamp(2.75rem,4.5vw,4.5rem)}
+.sec-sub{font-size:clamp(1.0625rem,1rem + .25vw,1.1875rem);color:var(--ink-2);line-height:1.72;max-width:58ch}
 
 /* ── BUTTONS ── */
 .btn-green{
@@ -90,21 +91,68 @@ abbr{text-decoration:underline dotted;cursor:help}
 ───────────────────────────────────────────── */
 .site-nav{
   position:sticky;top:0;z-index:100;
-  background:rgba(10,22,40,.94);
+  background:var(--navy-deep);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--navy-border)
+  border-bottom:1px solid transparent;
+  transition:border-color var(--t) ease,box-shadow var(--t) ease
+}
+/* Lifts off the page once the hero starts scrolling past — set by main.js */
+.site-nav.is-scrolled{
+  border-bottom-color:var(--navy-border);
+  box-shadow:0 1px 24px rgba(0,0,0,.34)
 }
 .nav-inner{
-  max-width:1200px;margin:0 auto;
+  max-width:var(--maxw);margin:0 auto;
   padding:.875rem clamp(1.25rem,5vw,3rem);
-  display:flex;align-items:center;justify-content:space-between
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem
 }
+.nav-right{display:flex;align-items:center;gap:.5rem}
+.nav-links{display:flex;align-items:center;gap:.25rem;margin-right:.5rem}
+.nav-links a{
+  display:block;font-size:.875rem;font-weight:500;
+  color:rgba(255,255,255,.72);padding:.5rem .75rem;border-radius:var(--r);
+  transition:color var(--t) ease,background var(--t) ease
+}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.06)}
+
+/* Log in menu */
+.nav-login{position:relative}
+.nav-login summary{
+  display:flex;align-items:center;gap:.375rem;cursor:pointer;list-style:none;
+  font-size:.875rem;font-weight:500;color:rgba(255,255,255,.72);
+  padding:.5rem .75rem;border-radius:var(--r);
+  transition:color var(--t) ease,background var(--t) ease
+}
+.nav-login summary::-webkit-details-marker{display:none}
+.nav-login summary:hover,.nav-login[open] summary{color:#fff;background:rgba(255,255,255,.06)}
+.nav-login summary:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.nav-login__chev{width:12px;height:12px;transition:transform var(--t) var(--ease)}
+.nav-login[open] .nav-login__chev{transform:rotate(180deg)}
+.nav-login__menu{
+  position:absolute;right:0;top:calc(100% + .5rem);z-index:120;
+  min-width:230px;padding:.375rem;
+  background:var(--navy-deep);
+  border:1px solid var(--navy-border);
+  border-radius:var(--r-lg);
+  box-shadow:0 18px 44px rgba(0,0,0,.42);
+  animation:menu-in .18s var(--ease) both
+}
+@keyframes menu-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.nav-login__menu a{
+  display:block;padding:.625rem .75rem;border-radius:var(--r);
+  transition:background var(--t) ease
+}
+.nav-login__menu a:hover{background:rgba(0,179,126,.12)}
+.nav-login__t{display:block;font-size:.875rem;font-weight:600;color:#fff;margin-bottom:.125rem}
+.nav-login__d{display:block;font-size:.75rem;color:var(--navy-muted)}
+
 .nav-cta{
   font-size:.875rem;font-weight:600;color:var(--green);
   padding:.5rem 1rem;border-radius:var(--r);
   border:1.5px solid var(--green-ring);
-  transition:background var(--t) ease,border-color var(--t) ease
+  transition:background var(--t) ease,border-color var(--t) ease;
+  white-space:nowrap
 }
 .nav-cta:hover{background:var(--green-glow)}
 
@@ -114,7 +162,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 .hero{
   position:relative;overflow:hidden;
   background:var(--navy);
-  padding:clamp(5rem,10vw,9rem) clamp(1.25rem,5vw,3rem) clamp(4rem,7vw,7rem);
+  padding:clamp(4.5rem,9vw,8rem) clamp(1.25rem,5vw,3rem) clamp(4rem,7vw,7rem);
 }
 /* Official Record hero background — ledger rules, stamp frames, seal geometry */
 .hero::before{
@@ -133,11 +181,13 @@ abbr{text-decoration:underline dotted;cursor:help}
   pointer-events:none;user-select:none
 }
 
+/* Copy stacks above the product showcase so the dashboard can run wide —
+   a half-column visual reads too small for a portfolio-scale product. */
 .hero-layout{
   position:relative;
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:1fr auto;gap:clamp(2.5rem,5vw,7rem);align-items:center
+  max-width:var(--maxw);margin:0 auto
 }
+.hero-main{max-width:840px}
 
 /* Badge */
 .hero-badge{
@@ -158,13 +208,13 @@ abbr{text-decoration:underline dotted;cursor:help}
 
 /* Headline */
 .hero-heading{
-  font-size:clamp(3rem,1.5rem+5vw,6.5rem);
+  font-size:clamp(3rem,1.5rem + 5vw,6.5rem);
   font-weight:800;line-height:1.02;letter-spacing:-.04em;
   color:#fff;margin-bottom:1.5rem
 }
 
 .hero-sub{
-  font-size:clamp(1rem,.875rem+.5vw,1.1875rem);
+  font-size:clamp(1rem,.875rem + .5vw,1.1875rem);
   color:rgba(255,255,255,0.85);line-height:1.72;max-width:52ch;margin-bottom:2.5rem
 }
 
@@ -202,48 +252,77 @@ abbr{text-decoration:underline dotted;cursor:help}
 .frame-mobile img{display:block;width:100%;height:100%;object-fit:cover}
 .frame-mobile--sm{max-width:220px}
 
-/* Hero proof panel — replaces the metric-stats column.
-   Entrance rise-in on load, then a slow idle float for a sense of life —
-   subtle and looping, matching the badge-dot's blink elsewhere on the
-   page rather than anything showy. */
-.hero-proof{position:relative;display:flex;justify-content:center;align-items:center;min-height:420px}
-.hero-proof__mobile{
-  position:absolute;left:8%;top:12%;width:220px;z-index:1;
-  transform:rotate(-4deg);opacity:1;
-  animation:hero-rise-mobile .8s var(--ease) both,hero-float-mobile 6s ease-in-out .8s infinite
+/* ── Hero product showcase ──
+   Dashboard leads (widest, most visual); the contractor phone and the AI job
+   card layer over it so the whole product reads in one glance. Each layer
+   rises in on load, then holds a slow idle float — subtle and looping, in the
+   same motion language as the badge-dot blink rather than anything showy. */
+.hero-showcase{
+  position:relative;
+  max-width:1120px;
+  margin:clamp(2.5rem,4.5vw,4rem) auto 0;
+  padding-bottom:clamp(1rem,3vw,2.5rem)
 }
-.hero-proof__browser{
-  position:relative;z-index:2;width:min(560px,90%);margin-left:12%;
-  opacity:1;
-  animation:hero-rise-browser .8s var(--ease) .15s both,hero-float-browser 7s ease-in-out .95s infinite
+/* Green wash behind the frames — lifts them off the navy */
+.hero-showcase__glow{
+  position:absolute;left:50%;top:8%;translate:-50% 0;
+  width:80%;height:70%;border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(0,179,126,.20) 0%,rgba(0,179,126,0) 68%);
+  filter:blur(38px);pointer-events:none;z-index:0
 }
-@keyframes hero-rise-mobile{
-  from{opacity:0;transform:rotate(-4deg) translateY(28px)}
-  to{opacity:1;transform:rotate(-4deg) translateY(0)}
+.hero-showcase__main{
+  position:relative;z-index:1;
+  animation:showcase-rise .9s var(--ease) .1s both,showcase-float 8s ease-in-out 1s infinite
 }
-@keyframes hero-float-mobile{
-  0%,100%{transform:rotate(-4deg) translateY(0)}
-  50%{transform:rotate(-4deg) translateY(-8px)}
+.hero-showcase__phone{
+  position:absolute;z-index:3;left:-1.5%;bottom:-3%;
+  width:clamp(104px,12vw,158px);
+  transform:rotate(-5deg);
+  animation:phone-rise .9s var(--ease) .32s both,phone-float 6.5s ease-in-out 1.22s infinite
 }
-@keyframes hero-rise-browser{
-  from{opacity:0;transform:translateY(28px)}
-  to{opacity:1;transform:translateY(0)}
+.hero-showcase__phone .frame-mobile{max-width:none;border-width:6px}
+.hero-showcase__card{
+  position:absolute;z-index:2;right:-2.5%;bottom:-7%;
+  width:clamp(190px,23vw,290px);
+  transform:rotate(2.5deg);
+  animation:card-rise .9s var(--ease) .5s both,card-float 7.5s ease-in-out 1.4s infinite
 }
-@keyframes hero-float-browser{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-6px)}
+.hero-showcase__card .frame-browser{box-shadow:0 22px 54px rgba(0,0,0,.34)}
+
+@keyframes showcase-rise{from{opacity:0;transform:translateY(34px) scale(.985)}to{opacity:1;transform:none}}
+@keyframes showcase-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes phone-rise{
+  from{opacity:0;transform:rotate(-5deg) translateY(30px)}
+  to{opacity:1;transform:rotate(-5deg) translateY(0)}
 }
+@keyframes phone-float{
+  0%,100%{transform:rotate(-5deg) translateY(0)}
+  50%{transform:rotate(-5deg) translateY(-11px)}
+}
+@keyframes card-rise{
+  from{opacity:0;transform:rotate(2.5deg) translateY(30px)}
+  to{opacity:1;transform:rotate(2.5deg) translateY(0)}
+}
+@keyframes card-float{
+  0%,100%{transform:rotate(2.5deg) translateY(0)}
+  50%{transform:rotate(2.5deg) translateY(-9px)}
+}
+
 @media(max-width:1024px){
-  .hero-proof__mobile{left:2%;width:160px}
-  .hero-proof__browser{margin-left:20%;width:min(480px,80%)}
+  .hero-showcase__phone{left:-1%;bottom:-2%}
+  .hero-showcase__card{right:-1%;bottom:-5%}
 }
-/* Below 768px: ONE asset only, per Stamped-09 §8.2 CLOSES #1 — do not
-   stagger multiple frames at this width, illegible and off-brief. */
+/* Below 768px: ONE asset only — stacked frames are illegible at this width.
+   The job card survives rather than the dashboard: it carries the real
+   before/after photos and stays readable small. */
 @media(max-width:767px){
-  .hero-proof{min-height:auto}
-  .hero-proof__mobile{display:none}
-  .hero-proof__browser{width:100%;margin-left:0}
-  .hero-proof__browser .frame-browser__chrome{display:none}
+  .hero-showcase{max-width:420px;margin-top:2.75rem;padding-bottom:0}
+  .hero-showcase__glow,.hero-showcase__main,.hero-showcase__phone{display:none}
+  .hero-showcase__card{
+    position:static;width:100%;right:auto;bottom:auto;transform:none;
+    animation:showcase-rise .9s var(--ease) .1s both
+  }
+  .hero-showcase__card .frame-browser{box-shadow:0 12px 32px rgba(0,0,0,.28)}
 }
 
 /* Document reference — bottom of hero */
@@ -252,6 +331,23 @@ abbr{text-decoration:underline dotted;cursor:help}
   display:flex;gap:1.75rem
 }
 .hero-docref span{font-size:.5625rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.18);font-variant-numeric:tabular-nums}
+
+/* ─────────────────────────────────────────────
+   METRICS STRIP — reads as the base of the hero
+───────────────────────────────────────────── */
+.metrics{background:var(--navy-deep);padding:clamp(2.75rem,5vw,4.25rem) 0;border-top:1px solid var(--navy-border)}
+.metrics-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,4vw,3.5rem)}
+.metric{position:relative;padding-left:clamp(1.25rem,2.5vw,2rem)}
+.metric::before{
+  content:'';position:absolute;left:0;top:.35rem;bottom:.35rem;width:2px;
+  background:linear-gradient(180deg,var(--green) 0%,rgba(0,179,126,0) 100%)
+}
+.metric-val{
+  font-size:clamp(2.5rem,1.5rem + 3vw,4rem);font-weight:800;letter-spacing:-.045em;
+  line-height:1;color:#fff;font-variant-numeric:tabular-nums;margin-bottom:.625rem
+}
+.metric-sfx{font-size:.55em;letter-spacing:-.02em;color:var(--green)}
+.metric-label{font-size:.9375rem;color:rgba(255,255,255,.72);line-height:1.6;max-width:24ch}
 
 /* ─────────────────────────────────────────────
    PROBLEM
@@ -303,6 +399,15 @@ abbr{text-decoration:underline dotted;cursor:help}
 .step-n{font-size:.6875rem;font-weight:700;letter-spacing:.14em;color:var(--green);text-transform:uppercase;margin-bottom:.875rem;font-variant-numeric:tabular-nums}
 .step-title{font-size:1.125rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.625rem}
 .step-body{font-size:.9375rem;color:rgba(255,255,255,0.85);line-height:1.72}
+/* Directional reveal — the visual slides in from whichever side it sits on */
+.step-row .step-visual,.step-row .step-copy{
+  opacity:0;transition:opacity .75s var(--ease) .1s,transform .75s var(--ease) .1s
+}
+.step-row .step-visual{transform:translateX(-32px)}
+.step-row .step-copy{transform:translateX(32px)}
+.step-row:nth-child(even) .step-visual{transform:translateX(32px)}
+.step-row:nth-child(even) .step-copy{transform:translateX(-32px)}
+.step-row.visible .step-visual,.step-row.visible .step-copy{opacity:1;transform:none}
 
 /* ─────────────────────────────────────────────
    PROOF / SINGAPORE
@@ -426,7 +531,7 @@ abbr{text-decoration:underline dotted;cursor:help}
   pointer-events:none;user-select:none
 }
 
-.pilot-h2{font-size:clamp(1.75rem,1rem+2.5vw,2.875rem);font-weight:800;letter-spacing:-.03em;color:#fff;margin-bottom:1rem}
+.pilot-h2{font-size:clamp(1.75rem,1rem + 2.5vw,2.875rem);font-weight:800;letter-spacing:-.03em;color:#fff;margin-bottom:1rem}
 .pilot-sub{font-size:1.0625rem;color:rgba(255,255,255,0.85);line-height:1.72;max-width:52ch;margin:0 auto 2.5rem}
 
 .pilot-terms{
@@ -443,6 +548,21 @@ abbr{text-decoration:underline dotted;cursor:help}
 .pilot-contact{margin-top:1.25rem;font-size:.875rem;color:rgba(255,255,255,0.85)}
 .pilot-contact a{color:rgba(255,255,255,0.85);border-bottom:1px solid var(--navy-border);padding-bottom:1px;transition:color var(--t) ease,border-color var(--t) ease}
 .pilot-contact a:hover{color:var(--green);border-color:var(--green)}
+
+/* Existing-customer entry points — deliberately quieter than the pilot CTA */
+.pilot-login{
+  margin-top:2.5rem;padding-top:1.75rem;border-top:1px solid var(--navy-border);
+  display:flex;flex-direction:column;align-items:center;gap:.875rem
+}
+.pilot-login__k{font-size:.625rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-muted)}
+.pilot-login__links{display:flex;gap:.625rem;flex-wrap:wrap;justify-content:center}
+.btn-quiet{
+  font-size:.875rem;font-weight:600;color:rgba(255,255,255,.85);
+  padding:.5625rem 1.125rem;border-radius:var(--r);
+  border:1px solid var(--navy-border);
+  transition:color var(--t) ease,border-color var(--t) ease,background var(--t) ease
+}
+.btn-quiet:hover{color:var(--green);border-color:var(--green-ring);background:var(--green-glow)}
 
 /* ─────────────────────────────────────────────
    FOOTER
@@ -461,15 +581,20 @@ abbr{text-decoration:underline dotted;cursor:help}
 /* ─────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────── */
+/* Nav links collapse before the CTA does — the CTA and Log in always survive */
+@media(max-width:900px){
+  .nav-links{display:none}
+}
+
 @media(max-width:960px){
-  /* Hero: stack vertically */
-  .hero-layout{grid-template-columns:1fr}
-  .hero-proof{margin-top:1rem}
   /* Hero watermark repositioned */
   .hero-watermark{bottom:auto;top:-5%;right:-15%;opacity:.03;width:90vw}
   /* Cards: single column */
   .problem-grid{grid-template-columns:1fr}
   .step-row,.step-row:nth-child(even){flex-direction:column}
+  /* Stacked steps: reveal vertically, sideways slide reads wrong in one column */
+  .step-row .step-visual,.step-row .step-copy,
+  .step-row:nth-child(even) .step-visual,.step-row:nth-child(even) .step-copy{transform:translateY(24px)}
   .proof-grid{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr;max-width:460px}
   /* Footer */
@@ -477,8 +602,15 @@ abbr{text-decoration:underline dotted;cursor:help}
   .footer-tagline{display:none}
 }
 
+@media(max-width:760px){
+  .metrics-row{grid-template-columns:1fr;gap:1.75rem}
+  .metric-label{max-width:none}
+}
+
 @media(max-width:600px){
   .hero-sub br{display:none}
+  .nav-inner{gap:.75rem}
+  .nav-login summary{padding:.5rem .5rem}
   .footer-nav{gap:2rem}
   .pilot-terms{gap:1.25rem}
   .term-sep{height:2rem}
@@ -490,7 +622,22 @@ abbr{text-decoration:underline dotted;cursor:help}
   .badge-dot{animation:none}
   html{scroll-behavior:auto}
   .btn-green:hover,.plan:hover,.prob-card:hover{transform:none}
-  .hero-proof__mobile,.hero-proof__browser{animation:none}
+  .site-nav{transition:none}
+  .nav-login__menu{animation:none}
+  .nav-login__chev{transition:none}
+  /* Keep the resting rotations, drop the motion */
+  .hero-showcase__main{animation:none}
+  .hero-showcase__phone{animation:none;opacity:1;transform:rotate(-5deg)}
+  .hero-showcase__card{animation:none;opacity:1;transform:rotate(2.5deg)}
   .frame-browser,.frame-mobile{transition:none}
   .frame-browser:hover,.frame-mobile:hover{transform:none}
+  .step-row .step-visual,.step-row .step-copy,
+  .step-row:nth-child(even) .step-visual,.step-row:nth-child(even) .step-copy{
+    opacity:1;transform:none;transition:none
+  }
+}
+
+/* Mobile + reduced motion: card is static and unrotated */
+@media(prefers-reduced-motion:reduce) and (max-width:767px){
+  .hero-showcase__card{transform:none}
 }

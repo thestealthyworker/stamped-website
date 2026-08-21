@@ -30,9 +30,23 @@ The stamp-frame SVG is the canonical logo — inline it in HTML wherever the log
 "Official Record" — institutional documentary aesthetic. Document reference codes (CASE/001), ghost stamp watermarks at low opacity, tabular numbers, ledger-line horizontal rules. The green appears only where certification or verification lives.
 
 ## Section order
-nav → hero → problem → how-it-works → proof → pricing → faq → pilot-cta → footer
+nav → hero → metrics → problem → how-it-works → proof → pricing → faq → pilot-cta → footer
 
 Sections alternate dark navy / light (#F7F8FA). Do not make all sections dark.
+The metrics strip is `--navy-deep` and reads as the base of the hero, not a section of its own.
+
+## Product app URLs
+The marketing site links out to the two live apps (nav "Log in" menu, pilot section, footer):
+- Managing agent dashboard — `https://dashboard.stampedsg.com`
+- Contractor app — `https://app.stampedsg.com`
+
+Both come from the `Stamped` repo's docs (`docs/runbook/`, `docs/log/`). If those hostnames
+ever change, all three link locations must be updated together.
+
+## CSS gotcha — clamp() math
+CSS requires whitespace around `+` and `-` inside `clamp()`/`calc()`. `clamp(3rem,1.5rem+5vw,6.5rem)`
+is invalid and the browser silently drops the whole declaration — headings fall back to UA
+defaults (this shipped live and made the site look small). Always write `1.5rem + 5vw`.
 
 ## Scroll reveal
 All `.reveal` elements are animated in by `main.js` using IntersectionObserver. Staggered delay applied to grid children. `prefers-reduced-motion` disables all transitions.
