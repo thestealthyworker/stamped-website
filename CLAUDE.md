@@ -24,7 +24,25 @@ Marketing website for **Stamped** — AI job documentation for Singapore managin
 Do not introduce amber or purple. Green is the primary accent — use deliberately, not everywhere.
 
 ## Logo
-The stamp-frame SVG is the canonical logo — inline it in HTML wherever the logo appears. Never use emoji or text as a substitute. The SVG is a rectangular border (`rx="4.5"`) with two thin horizontal rules flanking the wordmark "STAMPED" in Inter 800, letter-spacing 2.2. Two versions: `assets/logo-dark.svg` (white, for dark bg) and `assets/logo-navy.svg` (navy, for light bg).
+The canonical mark is the **Stamped wordmark**, shared with the product apps
+(source of truth: `Stamped` repo, `apps/dashboard/src/assets/brand/`). It is
+"STAMPED" in condensed uppercase outlines over a full-width baseline rule at
+22% opacity, with a green (`#00B37E`) segment covering the last ~22% of that
+rule. Ratio 514.22 : 132 (3.9 : 1). Never use emoji or text as a substitute.
+
+It is defined **once** as an SVG `<symbol id="stamped-wordmark">` at the top of
+`index.html` and referenced with `<use href="#stamped-wordmark"/>` in all four
+places it appears: nav, footer, hero ghost watermark, pilot-card ghost
+watermark. The paths use `currentColor`, so colour comes from CSS (`.brand-mark`)
+and one symbol serves both navy and light backgrounds. Standalone copies live in
+`assets/brand/stamped-wordmark-{white,navy}.svg`.
+
+The old stamp-frame lockup (rectangular border + two rules) is retired. If it
+turns up anywhere, it is stale.
+
+**Watermark placement:** unlike the old framed lockup, a wordmark cannot bleed
+off an edge — a half-clipped letter reads as a rendering bug, not a design
+choice. Keep both ghost watermarks fully inside their container.
 
 ## Design concept
 "Official Record" — institutional documentary aesthetic. Document reference codes (CASE/001), ghost stamp watermarks at low opacity, tabular numbers, ledger-line horizontal rules. The green appears only where certification or verification lives.
