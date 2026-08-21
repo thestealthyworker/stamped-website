@@ -165,7 +165,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 
 .hero-sub{
   font-size:clamp(1rem,.875rem+.5vw,1.1875rem);
-  color:var(--navy-muted);line-height:1.72;max-width:52ch;margin-bottom:2.5rem
+  color:rgba(255,255,255,0.85);line-height:1.72;max-width:52ch;margin-bottom:2.5rem
 }
 
 .hero-actions{display:flex;align-items:center;gap:.25rem;flex-wrap:wrap}
@@ -186,7 +186,7 @@ abbr{text-decoration:underline dotted;cursor:help}
   font-variant-numeric:tabular-nums
 }
 .stat-sfx{font-size:1.875rem;letter-spacing:-.02em}
-.stat-desc{font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--navy-muted);line-height:1.4}
+.stat-desc{font-size:.6875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,0.85);line-height:1.4}
 
 /* Document reference — bottom of hero */
 .hero-docref{
@@ -243,7 +243,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 .step-n{font-size:.6875rem;font-weight:700;letter-spacing:.14em;color:var(--green);text-transform:uppercase;margin-bottom:.875rem;font-variant-numeric:tabular-nums}
 .step-bar{width:2rem;height:2px;background:rgba(255,255,255,.1);margin-bottom:1.25rem}
 .step-title{font-size:1.125rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:.625rem}
-.step-body{font-size:.9375rem;color:var(--navy-muted);line-height:1.72}
+.step-body{font-size:.9375rem;color:rgba(255,255,255,0.85);line-height:1.72}
 
 /* ─────────────────────────────────────────────
    PROOF / SINGAPORE
@@ -327,7 +327,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 .faq-row{border-top:1px solid var(--navy-border);padding:1.875rem 0}
 .faq-row:last-child{border-bottom:1px solid var(--navy-border)}
 .faq-q{font-size:1.0625rem;font-weight:700;color:#fff;line-height:1.4;margin-bottom:.75rem}
-.faq-a{font-size:.9375rem;color:var(--navy-muted);line-height:1.78}
+.faq-a{font-size:.9375rem;color:rgba(255,255,255,0.85);line-height:1.78}
 
 /* ─────────────────────────────────────────────
    PILOT CTA
@@ -349,7 +349,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 }
 
 .pilot-h2{font-size:clamp(1.75rem,1rem+2.5vw,2.875rem);font-weight:800;letter-spacing:-.03em;color:#fff;margin-bottom:1rem}
-.pilot-sub{font-size:1.0625rem;color:var(--navy-muted);line-height:1.72;max-width:52ch;margin:0 auto 2.5rem}
+.pilot-sub{font-size:1.0625rem;color:rgba(255,255,255,0.85);line-height:1.72;max-width:52ch;margin:0 auto 2.5rem}
 
 .pilot-terms{
   display:flex;justify-content:center;align-items:center;
@@ -362,8 +362,8 @@ abbr{text-decoration:underline dotted;cursor:help}
 .term-v{font-size:1.0625rem;font-weight:700;color:var(--green)}
 .term-sep{width:1px;height:2.5rem;background:var(--navy-border)}
 
-.pilot-contact{margin-top:1.25rem;font-size:.875rem;color:var(--navy-muted)}
-.pilot-contact a{color:var(--navy-muted);border-bottom:1px solid var(--navy-border);padding-bottom:1px;transition:color var(--t) ease,border-color var(--t) ease}
+.pilot-contact{margin-top:1.25rem;font-size:.875rem;color:rgba(255,255,255,0.85)}
+.pilot-contact a{color:rgba(255,255,255,0.85);border-bottom:1px solid var(--navy-border);padding-bottom:1px;transition:color var(--t) ease,border-color var(--t) ease}
 .pilot-contact a:hover{color:var(--green);border-color:var(--green)}
 
 /* ─────────────────────────────────────────────
@@ -375,7 +375,7 @@ abbr{text-decoration:underline dotted;cursor:help}
 .footer-nav{display:flex;gap:3.5rem}
 .footer-col-h{font-size:.625rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:.875rem}
 .footer-col ul{display:flex;flex-direction:column;gap:.5625rem}
-.footer-col a{font-size:.875rem;color:var(--navy-muted);transition:color var(--t) ease}
+.footer-col a{font-size:.875rem;color:rgba(255,255,255,0.85);transition:color var(--t) ease}
 .footer-col a:hover{color:#fff}
 .footer-bottom{border-top:1px solid var(--navy-border);padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
 .footer-bottom p{font-size:.6875rem;color:rgba(255,255,255,.22)}
