@@ -105,21 +105,19 @@
       </div>
     </div>
 
-    <aside class="hero-stats" aria-label="Key performance metrics">
-      <div class="stat">
-        <div class="stat-accent" aria-hidden="true"></div>
-        <div class="stat-val" aria-label="60 seconds">60<span class="stat-sfx">s</span></div>
-        <div class="stat-desc">per job logged</div>
+    <aside class="hero-proof" aria-label="Product preview">
+      <div class="hero-proof__mobile">
+        <div class="frame-mobile">
+          <img src="assets/mockups/voice-note-screen.svg" width="375" height="812" alt="Contractor recording a voice note describing a completed job" loading="lazy" />
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-accent" aria-hidden="true"></div>
-        <div class="stat-val" aria-label="4 screens">4</div>
-        <div class="stat-desc">screens for<br>contractors</div>
-      </div>
-      <div class="stat">
-        <div class="stat-accent" aria-hidden="true"></div>
-        <div class="stat-val" aria-label="30 seconds">30<span class="stat-sfx">s</span></div>
-        <div class="stat-desc">AGM pack<br>export</div>
+      <div class="hero-proof__browser">
+        <div class="frame-browser">
+          <div class="frame-browser__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="frame-browser__content">
+            <img src="assets/mockups/ai-job-card.svg" width="720" height="620" alt="AI-generated job card with before and after photos, structured job details, and a verified stamp" loading="eager" fetchpriority="high" />
+          </div>
+        </div>
       </div>
     </aside>
   </div>
@@ -183,26 +181,48 @@
       <h2 id="how-heading" class="sec-h2 sec-h2--light">From voice note to permanent record. Under 60 seconds.</h2>
     </header>
 
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-n" aria-hidden="true">01</div>
-        <div class="step-bar" aria-hidden="true"></div>
-        <h3 class="step-title">Contractor sends a voice note</h3>
-        <p class="step-body">Describe the job in 30 seconds via WhatsApp. No new app to learn. No login.</p>
+    <div class="stepped">
+      <div class="step-row reveal">
+        <div class="step-visual">
+          <div class="frame-mobile frame-mobile--sm">
+            <img src="assets/mockups/voice-note-screen.svg" width="375" height="812" alt="Contractor voice note screen mid-recording, describing a completed job" loading="lazy" />
+          </div>
+        </div>
+        <div class="step-copy">
+          <div class="step-n" aria-hidden="true">01</div>
+          <h3 class="step-title">Contractor sends a voice note</h3>
+          <p class="step-body">Describe the job in 30 seconds via WhatsApp. No new app to learn. No login.</p>
+        </div>
       </div>
-      <div class="step-arrow" aria-hidden="true">→</div>
-      <div class="step reveal">
-        <div class="step-n" aria-hidden="true">02</div>
-        <div class="step-bar" aria-hidden="true"></div>
-        <h3 class="step-title">AI builds the job card</h3>
-        <p class="step-body">Before/after photos, job details, timestamp, geotag — structured into a permanent record automatically.</p>
+      <div class="step-row reveal">
+        <div class="step-visual">
+          <div class="frame-browser">
+            <div class="frame-browser__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="frame-browser__content">
+              <img src="assets/mockups/ai-job-card.svg" width="720" height="620" alt="AI job card with before/after photos and structured job fields including job type and timestamp" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <div class="step-copy">
+          <div class="step-n" aria-hidden="true">02</div>
+          <h3 class="step-title">AI builds the job card</h3>
+          <p class="step-body">Before/after photos, job details, timestamp, geotag — structured into a permanent record automatically.</p>
+        </div>
       </div>
-      <div class="step-arrow" aria-hidden="true">→</div>
-      <div class="step reveal">
-        <div class="step-n" aria-hidden="true">03</div>
-        <div class="step-bar" aria-hidden="true"></div>
-        <h3 class="step-title">You get the dashboard</h3>
-        <p class="step-body">Every job across every development. Searchable. Exportable. AGM-ready.</p>
+      <div class="step-row reveal">
+        <div class="step-visual">
+          <div class="frame-browser">
+            <div class="frame-browser__chrome" aria-hidden="true"><span></span><span></span><span></span></div>
+            <div class="frame-browser__content">
+              <img src="assets/mockups/dashboard-home.svg" width="1200" height="750" alt="Managing agent dashboard showing portfolio overview with metric cards and property grid" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <div class="step-copy">
+          <div class="step-n" aria-hidden="true">03</div>
+          <h3 class="step-title">You get the dashboard</h3>
+          <p class="step-body">Every job across every development. Searchable. Exportable. AGM-ready.</p>
+        </div>
       </div>
     </div>
   </div>
