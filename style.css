@@ -175,7 +175,12 @@ abbr{text-decoration:underline dotted;cursor:help}
   border-radius:var(--radius-lg,14px);
   box-shadow:var(--device-frame-shadow,0 12px 32px rgba(0,0,0,.10),0 4px 8px rgba(0,0,0,.06));
   border:1px solid var(--border-default,rgba(10,10,11,.09));
-  overflow:hidden;background:var(--white);max-width:100%
+  overflow:hidden;background:var(--white);max-width:100%;
+  transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease)
+}
+.frame-browser:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 48px rgba(0,0,0,.16),0 0 0 1px rgba(0,179,126,.1)
 }
 .frame-browser__chrome{
   height:32px;background:var(--light);display:flex;align-items:center;gap:6px;
@@ -187,15 +192,47 @@ abbr{text-decoration:underline dotted;cursor:help}
 .frame-mobile{
   border-radius:18px;border:8px solid var(--navy);
   box-shadow:var(--device-frame-shadow,0 12px 32px rgba(0,0,0,.10),0 4px 8px rgba(0,0,0,.06));
-  overflow:hidden;aspect-ratio:9/19.5;max-width:260px;background:#000
+  overflow:hidden;aspect-ratio:9/19.5;max-width:260px;background:#000;
+  transition:transform var(--t) var(--ease),box-shadow var(--t) var(--ease)
+}
+.frame-mobile:hover{
+  transform:translateY(-4px);
+  box-shadow:0 20px 48px rgba(0,0,0,.16),0 0 0 1px rgba(0,179,126,.1)
 }
 .frame-mobile img{display:block;width:100%;height:100%;object-fit:cover}
 .frame-mobile--sm{max-width:220px}
 
-/* Hero proof panel — replaces the metric-stats column */
+/* Hero proof panel — replaces the metric-stats column.
+   Entrance rise-in on load, then a slow idle float for a sense of life —
+   subtle and looping, matching the badge-dot's blink elsewhere on the
+   page rather than anything showy. */
 .hero-proof{position:relative;display:flex;justify-content:center;align-items:center;min-height:420px}
-.hero-proof__mobile{position:absolute;left:8%;top:12%;width:220px;z-index:1;transform:rotate(-4deg)}
-.hero-proof__browser{position:relative;z-index:2;width:min(560px,90%);margin-left:12%}
+.hero-proof__mobile{
+  position:absolute;left:8%;top:12%;width:220px;z-index:1;
+  transform:rotate(-4deg);opacity:1;
+  animation:hero-rise-mobile .8s var(--ease) both,hero-float-mobile 6s ease-in-out .8s infinite
+}
+.hero-proof__browser{
+  position:relative;z-index:2;width:min(560px,90%);margin-left:12%;
+  opacity:1;
+  animation:hero-rise-browser .8s var(--ease) .15s both,hero-float-browser 7s ease-in-out .95s infinite
+}
+@keyframes hero-rise-mobile{
+  from{opacity:0;transform:rotate(-4deg) translateY(28px)}
+  to{opacity:1;transform:rotate(-4deg) translateY(0)}
+}
+@keyframes hero-float-mobile{
+  0%,100%{transform:rotate(-4deg) translateY(0)}
+  50%{transform:rotate(-4deg) translateY(-8px)}
+}
+@keyframes hero-rise-browser{
+  from{opacity:0;transform:translateY(28px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes hero-float-browser{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-6px)}
+}
 @media(max-width:1024px){
   .hero-proof__mobile{left:2%;width:160px}
   .hero-proof__browser{margin-left:20%;width:min(480px,80%)}
@@ -453,4 +490,7 @@ abbr{text-decoration:underline dotted;cursor:help}
   .badge-dot{animation:none}
   html{scroll-behavior:auto}
   .btn-green:hover,.plan:hover,.prob-card:hover{transform:none}
+  .hero-proof__mobile,.hero-proof__browser{animation:none}
+  .frame-browser,.frame-mobile{transition:none}
+  .frame-browser:hover,.frame-mobile:hover{transform:none}
 }
