@@ -252,9 +252,14 @@ abbr{text-decoration:underline dotted;cursor:help}
 .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,5.5rem);align-items:center}
 .proof-copy .sec-h2{margin-top:.5rem}
 
-.proof-list{display:flex;flex-direction:column;gap:.875rem;margin-top:1.75rem}
-.proof-list li{display:flex;align-items:baseline;gap:.625rem;font-size:.9375rem;color:var(--ink-2);line-height:1.5}
-.tick{color:var(--green);font-size:.75rem;flex-shrink:0}
+.proof-badges{display:flex;flex-wrap:wrap;gap:.625rem;margin-top:1.75rem}
+.badge-verified{
+  display:inline-flex;align-items:center;gap:.375rem;
+  background:#E6F7F2;color:var(--green-dk);
+  border-radius:999px;padding:.375rem .875rem;
+  font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em
+}
+.badge-verified svg{width:12px;height:12px;flex-shrink:0}
 
 .proof-quote{
   background:var(--white);border-radius:var(--r-lg);
@@ -276,6 +281,20 @@ abbr{text-decoration:underline dotted;cursor:help}
 .q-footer{display:flex;flex-direction:column;gap:.625rem}
 .q-rule{width:2rem;height:2px;background:var(--green)}
 .q-footer cite{font-size:.8125rem;color:var(--ink-3);font-style:normal;letter-spacing:.01em}
+
+/* Unattributed stat callout — placeholder for proof-quote until a named
+   testimonial is secured (Stamped-09 §8.2 CLOSES #5) */
+.proof-stat{
+  background:var(--white);border-radius:var(--r-lg);
+  border:1.5px solid var(--ink-border);
+  padding:2.75rem;position:relative;
+  box-shadow:0 4px 28px rgba(0,0,0,.05);
+  text-align:center
+}
+.proof-stat-accent{width:1.75rem;height:2px;background:var(--green);margin:0 auto 1.25rem}
+.proof-stat-val{font-size:3.5rem;font-weight:800;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:.75rem;font-variant-numeric:tabular-nums}
+.proof-stat-sfx{font-size:2.25rem;letter-spacing:-.02em}
+.proof-stat-label{font-size:1.0625rem;color:var(--ink-2);line-height:1.5;max-width:32ch;margin:0 auto}
 
 /* ─────────────────────────────────────────────
    PRICING
